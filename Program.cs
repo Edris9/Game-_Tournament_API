@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // DI - Registrera service
 builder.Services.AddScoped<ITournamentService, TournamentService>();
+builder.Services.AddScoped<IGameService, GameService>();
 
 var app = builder.Build();
 

@@ -6,7 +6,6 @@
 using Game__Tournament_API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-
 namespace Game__Tournament_API.Data;
 
 public class AppDbContext : DbContext
@@ -16,4 +15,5 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Tournament> Tournaments { get; set; }
+    public DbSet<Game> Games { get; set; }
 }
