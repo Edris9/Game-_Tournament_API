@@ -1,6 +1,7 @@
 ﻿using Game__Tournament_API.Dtos;
 using Game__Tournament_API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Game__Tournament_API.Controllers;
 
@@ -49,6 +50,7 @@ public class TournamentsController : ControllerBase
         return Ok(tournament);
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<ActionResult> Delete(int id)
     {
@@ -56,4 +58,6 @@ public class TournamentsController : ControllerBase
         if (!success) return NotFound();
         return NoContent();
     }
+
+
 }
