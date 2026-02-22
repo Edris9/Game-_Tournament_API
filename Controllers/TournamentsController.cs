@@ -2,6 +2,7 @@
 using Game__Tournament_API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace Game__Tournament_API.Controllers;
 
@@ -35,6 +36,7 @@ public class TournamentsController : ControllerBase
         return Ok(tournament);
     }
 
+    [EnableRateLimiting("fixed")]
     [HttpPost]
     public async Task<ActionResult<TournamentResponseDTO>> Create(TournamentCreateDTO dto)
     {
